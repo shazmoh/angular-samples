@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="app" id="ng-app">
 
   <head>
     <meta charset="utf-8" />
@@ -21,20 +21,20 @@
         $scope.currrentItem = null;
 
         $scope.items = [
-          {index:0, title: 'First Item', childItems:[3,45,7]},
-          {index:1, title: 'second Item', childItems:[3,45,6,7,8]},
-          {index:2, title: 'third Item', childItems:[3]},
-          {index:3, title: 'fourth Item', childItems:[3,45,7,8,5,34,6]},
-          {index:4, title: 'fifth Item', childItems:[3,45,7,8,4]},
-          {index:5, title: 'sixth Item', childItems:[3,45,7,8,9,2]}
+          {index:0, title: 'first item',  childItems:[1]},
+          {index:1, title: 'second Item', childItems:[1,2]},
+          {index:2, title: 'third Item',  childItems:[1,2,3]},
+          {index:3, title: 'fourth Item', childItems:[1,2,3,4]},
+          {index:4, title: 'fifth Item',  childItems:[1,2,3,4,5]},
+          {index:5, title: 'sixth Item',  childItems:[1,2,3,4,5,6]}
         ];
 
         $scope.loadNextItem = function(){
           var currentItemIndex = $scope.currentItemIndex;
           var newIndex = (++currentItemIndex === $scope.items.length) ?  0 : currentItemIndex;
+          console.log(newIndex);
           $scope.currentItem = $scope.items[newIndex];
           $scope.currentItemIndex = newIndex;
-          console.log(newIndex, ' : ', $scope.currentItem.title, ' : ', $scope.currentItemIndex );
         }; 
 
       });
@@ -42,4 +42,4 @@
     </script>  
   </body>
 
-</html>
+</html> 
