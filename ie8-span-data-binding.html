@@ -32,9 +32,9 @@
         $scope.loadNextItem = function(){
           var currentItemIndex = $scope.currentItemIndex;
           var newIndex = (++currentItemIndex === $scope.items.length) ?  0 : currentItemIndex;
-          console.log(newIndex);
           $scope.currentItem = $scope.items[newIndex];
           $scope.currentItemIndex = newIndex;
+          console.log(newIndex, ' : ', $scope.currentItem.title, ' : ', $scope.currentItemIndex );
         }; 
 
       });
